@@ -63,7 +63,6 @@ public class EmployeeList extends Activity implements View.OnClickListener {
     int updateID;
     private EmployeeBean getEmpBean;
 
-
     /* Upload Pic */
     private Intent intent;
     private static String oldFileName;
@@ -94,6 +93,7 @@ public class EmployeeList extends Activity implements View.OnClickListener {
         if (employeeBll == null) {
             employeeBll = new EmployeeBll(EmployeeList.this);
         }
+
         employeeList = employeeBll.getEmployeeList();
         System.out.println("===empList.size()===" + employeeList.size());
         employeeAdapter = new EmployeeAdapter(this, employeeList);
@@ -206,8 +206,6 @@ public class EmployeeList extends Activity implements View.OnClickListener {
         updateImage.setImageBitmap(BitmapFactory.decodeFile(image));
     }
 
-
-    @SuppressWarnings("unused")
     private String validate() {
 
         String valid = null;
@@ -332,7 +330,7 @@ public class EmployeeList extends Activity implements View.OnClickListener {
                 try {
 
                     System.out
-                            .println(" -----------ShareExp Activity img uri :::: "
+                            .println(" -----------onActivityResult :: img uri :::: "
                                     + imgUri);
 
                     filename = Util.compressImage(String.valueOf(imgUri),
@@ -340,7 +338,7 @@ public class EmployeeList extends Activity implements View.OnClickListener {
                     fileStoragePath = filename;
 
                     System.out
-                            .println("::::::::::::::::ShareExp Activity filename ::: "
+                            .println("::::::::::::::::onActivityResult :: filename ::: "
                                     + filename);
                     updateImage.setImageBitmap(BitmapFactory
                             .decodeFile(filename));
