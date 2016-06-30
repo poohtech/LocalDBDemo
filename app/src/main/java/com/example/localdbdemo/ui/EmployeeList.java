@@ -330,7 +330,7 @@ public class EmployeeList extends Activity implements View.OnClickListener {
                 try {
 
                     System.out
-                            .println(" -----------onActivityResult :: img uri :::: "
+                            .println(" -----------onActivityResult : img uri --------:::: "
                                     + imgUri);
 
                     filename = Util.compressImage(String.valueOf(imgUri),
@@ -338,7 +338,7 @@ public class EmployeeList extends Activity implements View.OnClickListener {
                     fileStoragePath = filename;
 
                     System.out
-                            .println("::::::::::::::::onActivityResult :: filename ::: "
+                            .println("-----------------onActivityResult : filename -------------:: "
                                     + filename);
                     updateImage.setImageBitmap(BitmapFactory
                             .decodeFile(filename));
